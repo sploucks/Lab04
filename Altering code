@@ -1,0 +1,73 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+#include <math.h>
+#include <stdio.h>
+
+double userInput(int *x1, int *y1, int *x2, int *y2, int *x3, int *y3);
+double incenter(int num1, int num2, int num3);
+double sidelength(int x1, int x2, int y1, int y2);
+
+int main ()
+{
+
+  int xcoord1;
+  int xcoord2;
+  int xcoord3;
+  int ycoord1;
+  int ycoord2;
+  int ycoord3;
+  double incenterx;
+  double incentery;
+  double dist12;
+  double dist23;
+  double dist31;
+  
+  userInput(&xcoord1, &ycoord1, &xcoord2, &ycoord2, &xcoord3, &ycoord3);
+  dist12 = sidelength(xcoord1, xcoord2, ycoord1, ycoord2);
+  dist23 = sidelength(xcoord2, xcoord3, ycoord2, ycoord3);
+  dist31 = sidelength(xcoord3, xcoord1, ycoord3, ycoord1);
+  
+  return(0);
+}
+
+double userInput(int *x1, int *y1, int *x2, int *y2, int *x3, int *y3)
+{
+    printf("Enter X coordinate #1 -> "); 
+    scanf("%d", *x1);
+    printf("Enter Y coordinate #1 -> "); 
+    scanf("%d", *y1);
+    printf("Enter X coordinate #2 -> "); 
+    scanf("%d", *x2);
+    printf("Enter Y coordinate #2 -> "); 
+    scanf("%d", *y2);
+    printf("Enter X coordinate #3 -> "); 
+    scanf("%d", *x3);
+    printf("Enter Y coordinate #3 -> "); 
+    scanf("%d", *y3);
+}
+
+double sidelength(int x1, int x2, int y1, int y2)
+{
+  double dist;
+  int xdiff;
+  int ydiff;
+
+  xdiff = abs(x1 - x2);
+  ydiff = abs(y1 - y2);
+  dist = sqrt(pow(xdiff, 2) + pow(ydiff, 2));
+
+  return (dist);
+}
+
+double incenter(int num1, int num2, int num3)
+{
+  double xcoord;
+  xcoord = num1 + num2 + num3;
+  xcoord /= 3;
+  return (xcoord);
+}
