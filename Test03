@@ -71,7 +71,7 @@ double incenter(int num1, int num2, int num3)
 
 double displayResult(double *d1, double *d2, double *d3, double *inx, double *iny)
 {
-  printf("Distance from point 1 to point 2: %.2lf\n", *d1);
+  printf("\nDistance from point 1 to point 2: %.2lf\n", *d1);
   printf("Distance from point 2 to point 3: %.2lf\n", *d2);
   printf("Distance from point 3 to point 1: %.2lf\n", *d3);
   printf("Location of incenter: %.2lf, %.2lf\n", *inx, *iny);
